@@ -16,6 +16,14 @@
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
+.margin-top-section {
+  margin-top: 100px;
+}
+
+.margin-top-paragraph {
+  margin-top: 30px;
+}
+
 .header {
   height: 100vh;
   min-height: 600px;
@@ -85,6 +93,39 @@
   z-index: 20;
 }
 
+.description {
+  display: flex;
+  justify-content: center;
+}
+
+.two-columns {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.two-columns__brief {
+  width: 175px;
+  line-height: 1.2;
+  font-size: 18px;
+  font-weight: normal;
+  color: var(--color-link-figure);
+}
+
+.two-columns__main-text {
+  width: 80%;
+  min-width: 784px;
+}
+
+.two-columns__paragraph {
+  line-height: 34px;
+  font-size: 24px;
+}
+
+.two-columns__span-accent {
+  font-weight: bold;
+}
+ 
 /* и элемента с модификатором вида ключ-значение */
 .table__cell_theme_dark {
   width: 200px;
