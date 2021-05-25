@@ -1,94 +1,101 @@
+@import url("./vendor/normalize.css");
+
 :root {
   --color-background-dark: #1f1f1f;
   --color-background-light: #f2f2f2;
   --color-link-figure: #2f80ed;
-  --color-text: #000000;
+  --color-text-dark: #000000;
+  --color-text-light: #ffffff;
 }
 
 .page {
   min-width: 1100px;
-  /* мы ещё не умеем делать мобильную версию сайта, */
-  /* поэтому выше установлена минимальная ширина страницы */
   max-width: 1600px;
-  /* выше установили ограничение по максимальной ширине */
   margin: 0 auto;
-  /* выше для экранов больше 1600px отцентрировали весь контент */
+
   font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: var(--color-text-dark);
 }
 
-.margin-top-section {
+.page__section {
   margin-top: 100px;
 }
 
-.margin-top-paragraph {
-  margin-top: 30px;
-}
-
 .header {
-  height: 100vh;
-  min-height: 600px;
-  max-height: 756px;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  height: 100vh;
+  min-height: 600px;
+  max-height: 756px;
+
   background: var(--color-background-light);
-  /* выше установили ограничения для секции */
 }
 
 .logo {
-  height: 32px;
   width: 183px;
+  height: 32px;
 }
 
 .logo-place_header {
-  background: url("./images/logo_place_header.svg") no-repeat;
   position: absolute;
-  z-index: 100;
   top: 30px;
   left: 64px;
+  z-index: 100;
+
+  background: url("./images/logo_place_header.svg") no-repeat;
 }
 
 .header__title {
-  padding-left: 64px;
-  line-height: 96px;
-  width: 730px;
-  font-size: 102px;
   z-index: 100;
+
+  width: 730px;
+  margin: 0;
+  padding-left: 64px;
+
+  font-size: 102px;
+  line-height: 96px;
 }
 
 .header__subtitle {
   position: absolute;
   bottom: 30px;
   left: 64px;
-  line-height: 25px;
-  width: 388px;
-  font-size: 18px;
   z-index: 100;
+
+  width: 388px;
+  margin: 0;
+
+  font-size: 18px;
+  line-height: 25px;
 }
 
 .header__link {
+  color: var(--color-link-figure);
   text-decoration: none;
 }
 
-/* ниже мы привели пример двух селекторов, чтобы вы вспомнили запись элемента */
 .header__square-pic {
-  height: 568px;
-  width: 568px;
-  background: var(--color-link-figure);
   position: absolute;
   right: 0;
   top: 64px;
   z-index: 10;
+
+  width: 568px;
+  height: 568px;
+
+  background: var(--color-link-figure);
 }
 
 .header__main-illustration {
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 765px;
-  height: 608px;
   z-index: 20;
+
+  width: 765px;
 }
 
 .description {
@@ -99,15 +106,18 @@
 .two-columns {
   display: flex;
   justify-content: space-between;
+
   width: 80%;
 }
 
 .two-columns__brief {
   width: 175px;
-  line-height: 1.2;
+  margin: 0;
+
   font-size: 18px;
-  font-weight: normal;
   color: var(--color-link-figure);
+  font-weight: normal;
+  line-height: 1.2;
 }
 
 .two-columns__main-text {
@@ -116,9 +126,16 @@
 }
 
 .two-columns__paragraph {
+  margin: 0;
+
   font-size: 24px;
   line-height: 34px;
 }
+
+.two-columns__paragraph:nth-child(n+2) {
+  margin-top: 30px;
+}
+
 
 .two-columns__span-accent {
   font-weight: bold;
@@ -133,26 +150,32 @@
 
 .section-title {
   width: 60%;
-  text-align: center;
   margin: 0;
+
+  text-align: center;
   font-size: 60px;
   line-height: 1.15;
 }
 
 .section-subtitle {
   width: 60%;
-  text-align: center;
   margin: 20px 0 0 0;
+
+  text-align: center;
   font-size: 24px;
-  line-height: 34px;
   font-weight: normal;
+  line-height: 34px;
 }
 
 .table {
-  max-width: 1100px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  max-width: 1100px;
+  padding: 0;
+
+  list-style-type: none;
 }
 
 .table__cell {
@@ -161,28 +184,31 @@
   margin-right: 0;
 }
 
-.table_heading {
+.table__heading {
+  margin: 0;
+
   font-size: 24px;
   line-height: 1.15;
 }
 
-.table_text {
+.table__text {
+  margin: 20px 0 0 0;
+
   font-size: 18px;
   line-height: 1.2;
 }
 
 .feinman {
   position: relative;
-  background: url("./images/feynman.png") no-repeat;
-  background-position: left bottom;
-  alt: "Feinman";
-  background-color: var(--color-background-light);
-  height: 890px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
 
+  min-height: 890px;
+
+  background: url("./images/feynman.png") no-repeat;
+  background-position: left bottom;
+  background-color: var(--color-background-light);
 }
 
 .feinman__title {
@@ -196,25 +222,25 @@
 
 .feinman__subtitle {
   margin: 0;
+
   font-size: 36px;
-  line-height: 51px;
   font-weight: normal;
+  line-height: 51px;
 }
 
 .feinman__link {
-  text-decoration: none;
   position: absolute;
   right: 48px;
   top: 50%;
   bottom: 50%;
+
   font-size: 36px;
+  color: var(--color-link-figure);
   line-height: 51px;
+  text-decoration: none;
 }
  
 .kaufman {
-  background-color: var(--color-background-dark);
-  color: white;
-  overflow: hidden;
   position: relative;
 
   display: flex;
@@ -222,6 +248,10 @@
   align-items: center;
   justify-content: center;
 
+  color: var(--color-text-light);
+  background-color: var(--color-background-dark);
+
+  overflow: hidden;
 }
 
 .section-title_theme_dark {
@@ -233,7 +263,6 @@
   padding-bottom: 90px;
 }
 
-/* и элемента с модификатором вида ключ-значение */
 .table__cell_theme_dark {
   width: 200px;
   margin-right: 0;
@@ -244,16 +273,16 @@
   position: absolute;
   right: -210px;
   top: 0;
-  bottom: 0;
   z-index: 10;
 }
 
 .footer {
-  color: white;
-  background-color: var(--color-background-dark);
   display: flex;
   justify-content: center;
   min-height: 350px;
+
+  color: var(--color-text-light);
+  background-color: var(--color-background-dark);
 }
 
 .footer__columns {
@@ -266,6 +295,7 @@
 
 .footer__columns_content_copyright {
   flex-basis: 711px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -278,26 +308,32 @@
 .footer__author {
   padding-top: 18px;
   padding-bottom: 18px;
+
   font-size: 18px;
   line-height: 25px;
 }
 
 .footer__column-heading {
+  margin: 0;
+
   font-size: 18px;
   line-height: 30px;
-  margin: 0;
 }
 
 .footer__column-links {
-  list-style-type: none;
   padding: 0;
   margin-top: 20px;
 
   font-size: 18px;
   line-height: 30px;
+  list-style-type: none;
 }
 
 .footer__link {
+  color: var(--color-text-light);
   text-decoration: none;
-  color: white;
+}
+
+.footer__social-img {
+  margin-right: 10px;
 }
