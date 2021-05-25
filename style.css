@@ -32,6 +32,8 @@
   max-height: 756px;
 
   background: var(--color-background-light);
+
+  overflow: hidden;
 }
 
 .logo {
